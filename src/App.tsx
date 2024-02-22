@@ -11,6 +11,7 @@ const App = () => {
   return (
     <main className='flex h-'> 
    <Routes>
+    
     //public routes
     <Route element={<AuthLayout />}>
     <Route path="/sign-in" element={<SigninForm />} />
