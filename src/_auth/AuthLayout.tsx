@@ -1,14 +1,5 @@
-import React from 'react'
+import { Outlet, Navigate } from "react-router-dom";
 
-<<<<<<< main
-const AuthLayout = () => {
-  return (
-    <div>AuthLayout</div>
-  )
-}
-
-export default AuthLayout
-=======
 import { useUserContext } from "@/context/AuthContext";
 
 export default function AuthLayout() {
@@ -34,4 +25,3 @@ export default function AuthLayout() {
     </>
   );
 }
->>>>>>> local

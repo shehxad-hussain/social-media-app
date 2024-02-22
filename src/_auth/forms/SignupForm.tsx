@@ -1,14 +1,3 @@
-<<<<<<< main
-import React from 'react'
-
-const SignUpForm = () => {
-  return (
-    <div>SignUpForm</div>
-  )
-}
-
-export default SignUpForm
-=======
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -179,4 +168,3 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
->>>>>>> local
