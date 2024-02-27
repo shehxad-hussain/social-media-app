@@ -1,4 +1,3 @@
-
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -73,46 +72,6 @@ const SignupForm = () => {
     }
   };
 
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
-import { SignupValidation } from "@/lib/validation";
-import { z } from "zod";
-import Loader from "@/components/shared/Loader";
-import { Link } from "react-router-dom";
-import { createUserAccount } from "@/lib/appwrite/api";
-
-const SignUpForm = () => {
-  const isLoading = false;
-
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof SignupValidation>>({
-    resolver: zodResolver(SignupValidation),
-    defaultValues: {
-      name: "",
-      username: "",
-      email: "",
-      password: "",
-    },
-  });
-
-  // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    const newUser = await createUserAccount(values);
-    console.log(newUser);
-  }
-
-
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
@@ -125,32 +84,19 @@ const SignUpForm = () => {
           To use snapgram, Please enter your details
         </p>
 
-
         <form
           onSubmit={form.handleSubmit(handleSignup)}
-
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-5 w-full mt-4"
-        >
-
+          className="flex flex-col gap-5 w-full mt-4">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-
                 <FormLabel className="shad-form_label">Name</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
-                </FormControl>
-
-           <FormMessage />
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -160,18 +106,10 @@ const SignUpForm = () => {
             name="username"
             render={({ field }) => (
               <FormItem>
-
                 <FormLabel className="shad-form_label">Username</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
-                </FormControl>
-
-
                 <FormMessage />
               </FormItem>
             )}
@@ -182,18 +120,10 @@ const SignUpForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-
                 <FormLabel className="shad-form_label">Email</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input type="email" className="shad-input" {...field} />
-                </FormControl>
-
-
                 <FormMessage />
               </FormItem>
             )}
@@ -204,30 +134,17 @@ const SignUpForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-
                 <FormLabel className="shad-form_label">Password</FormLabel>
                 <FormControl>
                   <Input type="password" className="shad-input" {...field} />
                 </FormControl>
-
-                <FormLabel>password</FormLabel>
-                <FormControl>
-                  <Input type="Password" className="shad-input" {...field} />
-                </FormControl>
-
-
                 <FormMessage />
               </FormItem>
             )}
           />
 
-
           <Button type="submit" className="shad-button_primary">
             {isCreatingAccount || isSigningInUser || isUserLoading ? (
-
-          <Button type="submit" className="shad-button_primary">
-            {isLoading ? (
-
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>
@@ -240,12 +157,7 @@ const SignUpForm = () => {
             Already have an account?
             <Link
               to="/sign-in"
-
               className="text-primary-500 text-small-semibold ml-1">
-
-              className="text-primary-500 text-small-semibold ml-1"
-            >
-
               Log in
             </Link>
           </p>
@@ -254,6 +166,5 @@ const SignUpForm = () => {
     </Form>
   );
 };
-
 
 export default SignupForm;
